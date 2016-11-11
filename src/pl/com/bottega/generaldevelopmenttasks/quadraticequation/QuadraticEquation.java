@@ -33,14 +33,43 @@ public class QuadraticEquation {
     }
 
     private void viewEquation(double a, double b, double c) {
-        if (b != 0 && c != 0)
+        if (b > 0 && c > 0)
             System.out.println("Equation: y = " + a + " x^2 + " + b + " x + " + c);
 
-        if (b == 0)
+        if (b == 0 && c > 0)
             System.out.println("Equation: y = " + a + " x^2 + " + c);
 
-        if (c == 0)
-            System.out.println("Equation: y = " + a + " x^2 + " + b);
+        if (b == 0 && c < 0)
+            System.out.println("Equation: y = " + a + " x^2 " + c);
+
+        if (c == 0 && b > 0)
+            System.out.println("Equation: y = " + a + " x^2 + " + b + " x");
+
+        if (c == 0 && b < 0)
+            System.out.println("Equation: y = " + a + " x^2 " + b + " x");
+
+        if (b < 0 && c > 0)
+            System.out.println("Equation: y = " + a + " x^2 " + b + " x + " + c);
+
+        if (c < 0 && b > 0)
+            System.out.println("Equation: y = " + a + " x^2 + " + b + " x " + c);
+
+        if (b < 0 && c < 0)
+            System.out.println("Equation: y = " + a + " x^2  " + b + " x  " + c);
+
+        if (b == 0 && c == 0)
+            System.out.println("Equation: y = " + a + " x^2");
+    }
+
+    private void extremum(double a, double b, double c) {
+        double p = - b / 2 * a;
+        double q = - calculateDelta(a, b, c) / 4 * a;
+        System.out.println("A vertex of parabola:");
+        if (a > 0)
+            System.out.println("Minimum, parabola arms are directed to the top: p = " + p + ", q = " + q);
+
+        if (a < 0)
+            System.out.println("Maximum, parabola arms are directed to the bottom: p = " + p + ", q = " + q);
     }
 
     public void execute() {
@@ -67,5 +96,7 @@ public class QuadraticEquation {
             deltaLessThenZero(a, b, c);
         if (delta == 0)
             deltaEqualsZero(a, b);
+
+        extremum(a, b, c);
     }
 }
