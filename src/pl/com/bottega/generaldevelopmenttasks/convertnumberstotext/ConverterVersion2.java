@@ -23,7 +23,7 @@ public class ConverterVersion2 {
             tableOfRemainders[i] = temp;
         }
 
-        for (int i = 0; i < amountOfDigits; i++) {//(int i = amountOfDigits - 1; i < 0; i--)
+        for (int i = 0; i < amountOfDigits; i++) {
             switch (tableOfRemainders[i]) {
                 case 0:
                     System.out.print("zero");
