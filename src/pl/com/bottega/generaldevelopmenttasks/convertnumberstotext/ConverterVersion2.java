@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class ConverterVersion2 {
 
-    private static void convertNumberToText(int number) {
+    private static StringBuilder convertNumberToText(int number) {
         int amountOfDigits = Integer.toString(number).length();
         int[] tableOfRemainders = new int[amountOfDigits];
 
@@ -17,54 +17,49 @@ public class ConverterVersion2 {
             tableOfRemainders[i] = remainder;
         }
 
-        for(int i = 0; i < amountOfDigits / 2; i++) {
-            int temp = tableOfRemainders[amountOfDigits - 1 - i];
-            tableOfRemainders[amountOfDigits - 1 - i] = tableOfRemainders[i];
-            tableOfRemainders[i] = temp;
-        }
+        StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < amountOfDigits; i++) {
+        for (int i = amountOfDigits - 1; i >= 0; i--) {
             switch (tableOfRemainders[i]) {
                 case 0:
-                    System.out.print("zero");
+                    sb.append("zero ");
                     break;
                 case 1:
-                    System.out.print("one");
+                    sb.append("one ");
                     break;
                 case 2:
-                    System.out.print("two");
+                    sb.append("two ");
                     break;
                 case 3:
-                    System.out.print("three");
+                    sb.append("three ");
                     break;
                 case 4:
-                    System.out.print("four");
+                    sb.append("four ");
                     break;
                 case 5:
-                    System.out.print("five");
+                    sb.append("five ");
                     break;
                 case 6:
-                    System.out.print("six");
+                    sb.append("six ");
                     break;
                 case 7:
-                    System.out.print("seven");
+                    sb.append("seven ");
                     break;
                 case 8:
-                    System.out.print("eight");
+                    sb.append("eight ");
                     break;
                 case 9:
-                    System.out.print("nine");
+                    sb.append("nine ");
                     break;
             }
-            System.out.print(" ");
         }
+        return sb;
     }
 
     public static void main(String[] args) {
         System.out.println("Enter some number: ");
         int number = Integer.valueOf(new Scanner(System.in).nextLine());
 
-        System.out.println("Given number " + number + " converted into text: ");
-        convertNumberToText(number);
+        System.out.println("Given number " + number + " converted into text: " + convertNumberToText(number));
     }
 }
