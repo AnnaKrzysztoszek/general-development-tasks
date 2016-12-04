@@ -11,7 +11,7 @@ import pl.com.bottega.generaldevelopmenttasks.animalsolid.model.voice.Voiceable;
 /**
  * Created by anna on 04.12.2016.
  */
-public enum Species {
+public enum Species implements AnimalConfiguration{
     CAT("cat", new Mewling(), new Viviparous()),
     DOG("dog", new Barking(), new Viviparous()),
     SPARROW("sparrow", new Tweeting(), new Oviparous());

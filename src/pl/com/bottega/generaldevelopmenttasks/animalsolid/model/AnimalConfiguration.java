@@ -8,6 +8,6 @@ import pl.com.bottega.generaldevelopmenttasks.animalsolid.model.voice.Voiceable;
  */
 public interface AnimalConfiguration {
     String getName();
-    Voiceable getVoicable();
+    Voiceable getVoiceable();
     Breedable getBreedable();
 }
