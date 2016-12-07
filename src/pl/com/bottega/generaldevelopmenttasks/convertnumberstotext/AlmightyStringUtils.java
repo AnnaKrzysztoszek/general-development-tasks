@@ -40,20 +40,6 @@ public class AlmightyStringUtils {
     }
 
     private static String digitToWord(char character, Language language) {
-        switch (character) {
-            case '0': return language.getZero();
-            case '1': return language.getOne();
-            case '2': return language.getTwo();
-            case '3': return language.getThree();
-            case '4': return language.getFour();
-            case '5': return language.getFive();
-            case '6': return language.getSix();
-            case '7': return language.getSeven();
-            case '8': return language.getEight();
-            case '9': return language.getNine();
-            case '.': return language.getDot();
-            case '-': return language.getMinus();
-            default: return "unrecognized sign";
-        }
+        return language.getText(character);
     }
 }

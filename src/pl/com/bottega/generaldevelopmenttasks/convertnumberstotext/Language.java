@@ -83,4 +83,22 @@ public enum Language {
     public String getMinus() {
         return minus;
     }
+
+    public String getText(char character) {
+        switch (character) {
+            case '0': return getZero();
+            case '1': return getOne();
+            case '2': return getTwo();
+            case '3': return getThree();
+            case '4': return getFour();
+            case '5': return getFive();
+            case '6': return getSix();
+            case '7': return getSeven();
+            case '8': return getEight();
+            case '9': return getNine();
+            case '.': return getDot();
+            case '-': return getMinus();
+            default: return "unrecognized sign";
+        }
+    }
 }
