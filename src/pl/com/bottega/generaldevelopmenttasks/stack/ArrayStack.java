@@ -10,7 +10,7 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public void push(E element) {
-        if (index + 1 >= stack.length)
+        if (index == stack.length - 1)
             throw new IllegalStateException("Stack is overflow");
         index++;
         stack[index] = element;
